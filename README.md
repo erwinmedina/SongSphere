@@ -19,7 +19,8 @@ This is how we stayed organized and kept the project moving forward:
 [Trello Board](https://trello.com/b/bue7xRZf/songsphere)
 
 ## Images
-[Images of our project would go here]
+### Preliminary Design
+![Preliminary Design](https://i.imgur.com/kMU5OtU.png)
 
 ## Tools Used:
 - Typescript
