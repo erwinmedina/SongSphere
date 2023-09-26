@@ -8,7 +8,7 @@ import Button from "./Button";
 
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useState } from "react";
-import { toast } from "react-hot-toast";
+import  toast  from "react-hot-toast";
 import { useUser } from "@/hooks/useUser";
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
 import { useRouter } from 'next/navigation';
@@ -87,14 +87,14 @@ const UploadModal = () => {
                 <div>
                     <div className="pb-1">
                         Select a song file
-                        <Input id="song" type="file" disabled={isLoading} {...register('song', {required: true})} accept=".mp3"/>
                     </div>
+                    <Input id="song" type="file" disabled={isLoading} {...register('song', {required: true})} accept=".mp3"/>
                 </div>
                 <div>
                     <div className="pb-1">
                         Select an image
-                        <Input id="image" type="file" disabled={isLoading} {...register('image', {required: true})} accept="image/*"/>
                     </div>
+                    <Input id="image" type="file" disabled={isLoading} {...register('image', {required: true})} accept="image/*"/>
                 </div>
                 <Button disabled={isLoading} type="submit">
                     Create
