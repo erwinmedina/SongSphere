@@ -39,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({children}) => {
                         ))}
                     </div>
                 </Box>
-                <Box className="overflow-y-auto h-full">
+                <Box className="overflow-y-auto h-full bg-gradient-to-t from-red-800">
                     <Library/>
                 </Box>
             </div>
