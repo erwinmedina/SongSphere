@@ -11,6 +11,7 @@ import Player from "@/components/Player";
 const font = Figtree({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  icons: "./songsphere.png",
   title: 'SongSphere',
   description: 'Listen to music!',
 }
