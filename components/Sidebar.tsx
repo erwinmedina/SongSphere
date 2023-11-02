@@ -44,7 +44,7 @@ const Sidebar: React.FC<SidebarProps> = ({children, songs}) => {
                         ))}
                     </div>
                 </Box>
-                <Box className="overflow-y-auto h-full bg-gradient-to-t from-red-800">
+                <Box className="overflow-y-auto h-full bg-gradient-to-t from-violet-800">
                     <Library songs={songs}/>
                 </Box>
             </div>
