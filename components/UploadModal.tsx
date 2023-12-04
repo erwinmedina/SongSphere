@@ -8,7 +8,7 @@ import Button from "./Button";
 
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useState } from "react";
-import  toast  from "react-hot-toast";
+import toast from "react-hot-toast";
 import { useUser } from "@/hooks/useUser";
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
 import { useRouter } from 'next/navigation';
@@ -41,7 +41,7 @@ const UploadModal = () => {
             const imageFile = values.image?.[0];
             const songFile = values.song?.[0];
             if (!imageFile || !songFile || !user) {
-                toast.error('Missing fields');
+                toast.error("Missing fields");
                 return;
             }
             const uniqueID = uniqid();

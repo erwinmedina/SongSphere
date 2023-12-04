@@ -13,7 +13,7 @@ interface LibraryProps {
     songs: Song[];
 }
 
-const Libary: React.FC<LibraryProps> = ({ songs }) => {
+const Library: React.FC<LibraryProps> = ({ songs }) => {
     const authModal = useAuthModal();
     const uploadModal = useUploadModal();
     const {user} = useUser();
@@ -44,4 +44,4 @@ const Libary: React.FC<LibraryProps> = ({ songs }) => {
     )
 }
 
-export default Libary;
+export default Library;

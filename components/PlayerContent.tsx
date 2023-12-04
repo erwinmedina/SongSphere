@@ -11,6 +11,7 @@ import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 import { AiFillStepBackward, AiFillStepForward } from "react-icons/ai";
 import { HiSpeakerWave, HiSpeakerXMark } from "react-icons/hi2";
 import { useState, useEffect } from "react";
+import PlayingMedia from "./PlayingMedia";
 
 interface PlayerContentProps {
     song: Song;
@@ -92,10 +93,11 @@ const PlayerContent: React.FC<PlayerContentProps> = ({song, songUrl}) => {
     }
 
     return (
-        <div className="grid grid-cols-2 md:grid-cols-3 h-full">
+        <div className="grid grid-cols h-full">
             <div className="flex w-full justify-start">
                 <div className="flex items-center gap-x-4">
-                    <MediaItem data={song}/>
+                    {/* <MediaItem data={song}/> */}
+                    <PlayingMedia data={song}/>
                     <LikeButton songId={song.id}/>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 # SongSphere
 
 ## Link to Website:
-https://songsphere-gowjb7xzh-erwinmedina.vercel.app/
+[https://songsphere-gowjb7xzh-erwinmedina.vercel.app/](https://songsphere-8d9yfuaia-erwinmedina.vercel.app/?code=dd3cb6a0-16b1-41e8-859d-00d2dda35756)
 
 ## Developers:
 | Name | Email | SchoolID | 
@@ -25,9 +25,20 @@ This is how we stayed organized and kept the project moving forward:
 ### Preliminary Design
 ![Preliminary Design](https://i.imgur.com/kMU5OtU.png)
 
+## Key Features
+- Functional library for songs from around the world
+- Song / Image uploads from user's local library
+- Playlist / Liked songs
+- User based customized features
+- Github / Google authentication
+  
+
+
 ## Tools Used:
 - Typescript
 - HTML / CSS
+- React / Tailwind
+- Supabase
 
 ## Future Items
 - User Login/Logout
@@ -41,8 +52,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
-
+First, install packages:
+```
+npm i next.
+```
+Run the development server:
 ```bash
 npm run dev
 # or

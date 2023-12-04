@@ -4,6 +4,6 @@
 
 html, body, :root {
   height: 100%;
-  background-color: black;
+  background-color: bg-zinc-800;
   color-scheme: dark;
 }

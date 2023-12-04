@@ -16,11 +16,11 @@ const SongItem: React.FC<SongItemProps> = ({
     const imagePath = useLoadImage(data);
 
     return (
-        <div onClick={() => onClick(data.id)} className="relative group flex flex-col items-center justify-center rounded-md overflow-hidden bg-violet-900 cursor-pointer hover:pg-neutral-400/10 transition">
+        <div onClick={() => onClick(data.id)} className="relative group flex flex-col items-center justify-center rounded-md overflow-hidden gap-x-4 bg-zinc-800 shadow-xl cursor-pointer hover:bg-zinc-600/10 transition p-3">
             <div className="relative aspect-square w-full h-full rounded-t-md overflow-hidden">
                 <Image className="object-cover" src={imagePath || '/images/liked.png'} fill alt="Image"/>
             </div>
-            <div className="flex flex-col items-start w-full pt-4 gap-y-1 px-3">
+            <div className="flex flex-col items-start w-full pt-4 gap-y-1">
                 <p className="font-semibold truncate w-full">
                     {data.title}
                 </p>
