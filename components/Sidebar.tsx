@@ -16,6 +16,7 @@ import PlayerContent from "./PlayerContent";
 import Player from "./Player";
 import { Form } from "react-hook-form";
 import Playlists from "./Playlists";
+import Image from "next/image";
 
 
 
@@ -67,7 +68,13 @@ const Sidebar: React.FC<SidebarProps> = ({
                     p-2
                 "
             >
-                <Box>
+               
+                <div className="w-full flex justify-center ">
+                        <Image  width={75} height={75} src="/images/songsphere-logo.png" alt="Playlist" className="m-2"/>
+                </div>
+                
+
+                <Box >
                     <div 
                         className="
                             flex
@@ -88,16 +95,16 @@ const Sidebar: React.FC<SidebarProps> = ({
                 <Box className="overflow-y-auto h-full">
                     <Library songs={songs} />
                 </Box>
-                <Box className="overflow-y-auto h-full">
+                <Box className="overflow-y-auto h-3/4">
                     <Playlists playlists={playlists} />
                 </Box>
             </div>
 
 
                 <div className="bg-zinc-900 h-full w-full flex flex-col">
-                    <Box className=" w-full bg-zinc-900 pr-2">
+                    <Box className=" w-full bg-zinc-900 pr-2 pt-2">
                         <Box className="">
-                        <Header className=" rounded-lg h-100">
+                        <Header className=" rounded-lg h-100 ">
                         <div className="mb-2">
                             <h1
                             className="
