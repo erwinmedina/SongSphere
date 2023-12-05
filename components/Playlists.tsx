@@ -4,23 +4,25 @@ import { TbPlaylist } from "react-icons/tb";
 import { AiOutlinePlus } from "react-icons/ai";
 import useAuthModal from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
-import useUploadModal from "@/hooks/useUploadModal";
-import { Song } from "@/types";
+import { Playlist, Song } from "@/types";
 import MediaItem from "./MediaItem";
 import useOnPlay from "@/hooks/useOnPlay";
+import useUploadPlaylistModal from "@/hooks/useUploadPlaylistModal";
+import PlaylistItem from "./PlaylistItem";
+import PlaylistMediaItem from "./PlaylistMediaItem";
 
 interface PlaylistsProps {
-    songs: Song[];
+    playlists: Playlist[];
 }
 
 const Playlists: React.FC<PlaylistsProps> = ({
-    songs
+    playlists
 }) => {
     const authModal = useAuthModal();
-    const uploadModal = useUploadModal();
+    const uploadModal = useUploadPlaylistModal();
     const { user } = useUser();
 
-    const onPlay = useOnPlay(songs);
+    // const onPlay = useOnPlay(songs);
 
     const onClick = () => {
         if (!user) {
@@ -77,11 +79,11 @@ const Playlists: React.FC<PlaylistsProps> = ({
                 mt-4
                 px-3
             ">
-
-                {songs.map((item) => (
-                    <MediaItem 
-                        onClick={(id: string) => onPlay(id)}
-                    key = {item.id}
+                
+                {playlists.map((item) => (
+                    <PlaylistMediaItem
+                        onClick={() => {}}
+                        key = {item.id}
                         data = {item}
                     />
                 ))}

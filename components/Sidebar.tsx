@@ -1,75 +1,60 @@
-"use client"; 
+"use client";
 
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
-import { HiHome } from 'react-icons/hi';
-import { BiSearch } from 'react-icons/bi';
-import { Song } from "@/types";
+import { HiHome } from "react-icons/hi";
+import { BiSearch } from "react-icons/bi";
 import Box from "./Box"
 import SidebarItem from "./SidebarItem";
 import Library from "./Library";
-import usePlayer from "@/hooks/usePlayer";
-import { twMerge } from "tailwind-merge";
+import { Playlist, Song } from "@/types";
 import Header from "./Header";
 import ListItem from "./ListItem";
+import userPlayer from "@/hooks/usePlayer";
+import { twMerge } from "tailwind-merge";
 import PlayerContent from "./PlayerContent";
 import Player from "./Player";
 import { Form } from "react-hook-form";
 import Playlists from "./Playlists";
 
+
+
 interface SidebarProps {
     children: React.ReactNode;
-    songs: Song[]
-}
+    songs: Song[];
+    playlists: Playlist[];
+};
+        
 
-const Sidebar: React.FC<SidebarProps> = ({children, songs}) => {
+const Sidebar: React.FC<SidebarProps> = ({
+    children,
+    songs,
+    playlists,
+}) => {
     const pathname = usePathname();
-    const player = usePlayer();
+    const player = userPlayer();
 
-    const myHTML = `
-        <body>
-            <div class="container">
-            <br>
-                <h1> Video Searcher </h1>
-                <br>
-                <form id="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="search">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-danger" value="Search">
-                    </div>
-                </form>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="videos">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <body/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="script.js"></script>
-        `;
+
 
     const routes = useMemo(() => [
         {
             icon: HiHome,
             label: 'Home',
             active: pathname !== '/search',
-            href: "/"
+            href: '/',
         },
         {
             icon: BiSearch,
             label: 'Search',
-            active: pathname == '/search',
-            href: '/search'
+            active: pathname === '/search',
+            href: '/search',
         }
     ], []);
-    
+
     return (
         // MAIN BACKGROUND
-        <div className="flex h-full">
+        <div className="flex h-full"
+        >
             <div
                 className="
                     hidden
@@ -104,7 +89,7 @@ const Sidebar: React.FC<SidebarProps> = ({children, songs}) => {
                     <Library songs={songs} />
                 </Box>
                 <Box className="overflow-y-auto h-full">
-                    <Playlists songs={songs} />
+                    <Playlists playlists={playlists} />
                 </Box>
             </div>
 
@@ -121,7 +106,7 @@ const Sidebar: React.FC<SidebarProps> = ({children, songs}) => {
                             text
                             font-extrabold
                             "
-
+                            
                             >
                             Welcome Back
                             </h1>
@@ -155,24 +140,23 @@ const Sidebar: React.FC<SidebarProps> = ({children, songs}) => {
                         </main>
                         <main className="hidden md:flex bg-zinc-900  w-3/4 overflow-y-auto py-2 pr-2">
                             <Box className="h-full overflow-y-auto py-1 px-4 w-full ">
-
+                            
                             <h1 className="text-white text-2xl font-semibold font-family ">
                                 Now Playing
                             </h1>
                             <Player />
                             </Box>
-
+        
                         </main>
                     </Box> 
                     {/* <Box className="h-full">
                             <div dangerouslySetInnerHTML={{ __html: myHTML }} />
                     </Box> */}
                 </div>
+            
 
-        
-                </div>
-            );
+        </div>
+    );
 }
-
 
 export default Sidebar;
