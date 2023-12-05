@@ -10,6 +10,7 @@ import useOnPlay from "@/hooks/useOnPlay";
 import useUploadPlaylistModal from "@/hooks/useUploadPlaylistModal";
 import PlaylistItem from "./PlaylistItem";
 import PlaylistMediaItem from "./PlaylistMediaItem";
+import { useRouter } from "next/navigation";
 
 interface PlaylistsProps {
     playlists: Playlist[];
@@ -21,6 +22,7 @@ const Playlists: React.FC<PlaylistsProps> = ({
     const authModal = useAuthModal();
     const uploadModal = useUploadPlaylistModal();
     const { user } = useUser();
+    const router = useRouter();
 
     // const onPlay = useOnPlay(songs);
 
@@ -32,6 +34,10 @@ const Playlists: React.FC<PlaylistsProps> = ({
 
         return uploadModal.onOpen();
     };
+
+    const onClick2 = () => {
+        router.push("playlist");
+    }
     return (
         <div className="flex flex-col">
             <div
@@ -82,7 +88,7 @@ const Playlists: React.FC<PlaylistsProps> = ({
                 
                 {playlists.map((item) => (
                     <PlaylistMediaItem
-                        onClick={() => {}}
+                        onClick={onClick2}
                         key = {item.id}
                         data = {item}
                     />
