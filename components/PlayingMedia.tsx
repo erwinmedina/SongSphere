@@ -43,7 +43,6 @@ const MediaItem: React.FC<MediaItemProps> = ({
                     min-h-[350px]
                     min-w-[350px]
                     overflow-hidden
-                    left-14
                     shadow-xl
                 "
             >
@@ -58,8 +57,7 @@ const MediaItem: React.FC<MediaItemProps> = ({
             <div
                 className="
                 absolute
-                    bottom-20
-                    left-20
+                    bottom-16
                     gap-y-1
                     overflow-hidden
                 "

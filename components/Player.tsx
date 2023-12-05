@@ -17,11 +17,9 @@ const Player = () => {
     }
 
     return (
-        <Box className="object-right">
-            <div className="relative right-7 bottom-15 bg-zinc-800 w-1/3 py-2 h-[500px] px-4">
+            <div className="relative  bottom-15 bg-zinc-800 py-2 h-[500px] px-4 w-full">
                 <PlayerContent key={songUrl} song={song} songUrl={songUrl} />
             </div>
-        </Box>
     )
 }
 

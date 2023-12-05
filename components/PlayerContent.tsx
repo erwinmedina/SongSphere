@@ -99,75 +99,30 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
 
 
     return (
-        <div className="grid grid-cols h-full">
-            <div className="
-                flex
-                w-full
-                justify-start
-            ">
-                <div className=" items-center gap-x-4 w-1/2">
+        <div className="grid grid-cols h-full w-full">
+
+                <div className=" hidden md:flex items-center justify-center gap-x-4 w-">
                     {/* <MediaItem data={song} /> */}
                     <PlayingMedia data = {song} />
-                    <LikeButton songId = {song.id} />
+                    {/* <LikeButton songId = {song.id} /> */}
                 </div>
-            </div>
+            
             <div
                 className="
                     flex
-                    md:hidden
-                    col-auto
-                    w-full
-                    justify-end
-                    items-center
-
-                "
-            >
-                <div
-                    onClick={handlePlay}
-                    className="
-                        
-                        h-10
-                        w-10
-                        flex
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-white
-                        p-1
-                        
-                        cursor-pointer
-                    "
-                >   
-                    <Icon size={30} className="text-black" />
-                </div>
-                
-            </div>
-            <div className="hidden md:flex w-full justify-end pr-12">
-                <div className="flex items-center gap-x-2 w-[120px]">
-                    <VolumeIcon 
-                    onClick = {toggleMute}
-                    className = "cursor-pointer"
-                    size = {34}
-                    />
-                    <Slider 
-                        value = {volume}
-                        onChange={(value) => setVolume(value)}
-                    />
-                </div>
-            </div>
-
-            <div
-                className="
-                    hidden
                     h-full
-                    md:flex
                     justify-center
                     items-center
                     w-full
-                    max-w-[722px]
+                    
+                    pt-12
                     gap-x-6
                 "
             >
+                <div className="gap-x-6">
+                <LikeButton songId = {song.id}  />
+                </div>
+                
                 <AiFillStepBackward 
                     onClick = {onPlayPrevious}
                     size = {30}
@@ -204,6 +159,19 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
                         transition
                     "
                 />
+
+                <div className="flex items-center gap-x-2 w-[120px]">
+                    <VolumeIcon 
+                    onClick = {toggleMute}
+                    className = "cursor-pointer"
+                    size = {34}
+                    />
+                    <Slider 
+                        value = {volume}
+                        onChange={(value) => setVolume(value)}
+                    />
+                </div>
+                
             </div>
 
             {/* <div className="hidden md:flex w-full justify-end pr-2">
