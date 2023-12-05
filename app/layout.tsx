@@ -34,6 +34,29 @@ const font = localFont({
   ],
 });
 
+const font2 = localFont({
+  src: [
+    {
+      path: '../fonts/GraphikWide-Super-Trial.otf',
+      weight: '800',
+    },
+    {
+      path: '../fonts/GraphikWide-Bold-Trial.otf',
+      weight: '700',
+    },
+    {
+      path: '../fonts/Graphik-Medium-Trial.otf',
+      weight: '600',
+    },
+    {
+      path: '../fonts/Graphik-Regular-Trial.otf',
+      weight: '500',
+    },
+  ],
+});
+
+
+
 export const metadata: Metadata = {
   icons: "./songsphere.png",
   title: 'SongSphere',
@@ -53,7 +76,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body className={font2.className}>
         <ToasterProvider />
         <SupabaseProvider>
           <UserProvider>

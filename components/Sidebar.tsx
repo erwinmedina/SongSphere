@@ -141,7 +141,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                         <main className="hidden md:flex bg-zinc-900  w-3/4 overflow-y-auto py-2 pr-2">
                             <Box className="h-full overflow-y-auto py-1 px-4 w-full ">
                             
-                            <h1 className="text-white text-2xl font-semibold font-family ">
+                            <h1 className="text-white text-2xl font-bold font-family ">
                                 Now Playing
                             </h1>
                             <Player />
